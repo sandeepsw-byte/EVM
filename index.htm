@@ -1,90 +1,113 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
-    <title>Environmental Science Online Test</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 40px;
-            background-color: #f4f6f7;
-        }
-        h1 {
-            text-align: center;
-        }
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        #timer {
-            font-size: 18px;
-            color: red;
-            text-align: right;
-        }
-    </style>
+<title>Environmental Science Online Examination</title>
+<style>
+body { font-family: Arial; margin: 30px; background:#f2f4f7; }
+h1 { text-align:center; }
+.question { background:white; padding:15px; margin-bottom:15px; border-radius:8px; }
+textarea { width:100%; }
+#timer { color:red; font-weight:bold; text-align:right; }
+button { padding:10px 20px; font-size:16px; }
+</style>
 </head>
+
 <body>
 
-<h1>Environmental Science Test</h1>
+<h1>Environmental Science Examination</h1>
+<p><b>Time: 1 Hour 30 Minutes | Max Marks: 50</b></p>
+
+Name: <input type="text" id="studentName" required>
+Roll No: <input type="text" id="rollNo" required>
+
 <div id="timer">Time Left: 90:00</div>
 
-<form id="quizForm">
+<form id="examForm">
+
+<h2>Section A (MCQ - 2 Marks Each)</h2>
 
 <div class="question">
-    <p>1. Define BOD.</p>
-    <textarea name="q1" rows="3" cols="60"></textarea>
+1. BOD measures:
+<br><input type="radio" name="q1" value="a"> Oxygen required by microorganisms
+<br><input type="radio" name="q1" value="b"> Hardness
+<br><input type="radio" name="q1" value="c"> Alkalinity
 </div>
 
 <div class="question">
-    <p>2. What is photochemical smog?</p>
-    <input type="radio" name="q2" value="a"> Reaction of sunlight with NOx and hydrocarbons<br>
-    <input type="radio" name="q2" value="b"> Acid rain formation<br>
-    <input type="radio" name="q2" value="c"> Ozone depletion<br>
+2. Acid rain is mainly caused by:
+<br><input type="radio" name="q2" value="a"> CO2
+<br><input type="radio" name="q2" value="b"> SO2 and NOx
+<br><input type="radio" name="q2" value="c"> Methane
 </div>
 
 <div class="question">
-    <p>3. Calculate hardness if 50 mL sample used 12 mL of 0.01M EDTA.</p>
-    <input type="text" name="q3">
+3. Breakpoint chlorination is used for:
+<br><input type="radio" name="q3" value="a"> Disinfection
+<br><input type="radio" name="q3" value="b"> Hardness removal
+<br><input type="radio" name="q3" value="c"> Sludge treatment
 </div>
 
-<button type="button" onclick="submitQuiz()">Submit Test</button>
+<h2>Section B (Short Answers)</h2>
+
+<div class="question">
+4. Explain EDTA method for determination of hardness.
+<textarea rows="4"></textarea>
+</div>
+
+<div class="question">
+5. Explain Primary, Secondary and Tertiary wastewater treatment.
+<textarea rows="4"></textarea>
+</div>
+
+<div class="question">
+6. Discuss greenhouse effect and global warming.
+<textarea rows="4"></textarea>
+</div>
+
+<h2>Section C (Numericals)</h2>
+
+<div class="question">
+7. 50 mL sample required 12 mL of 0.01M EDTA. Calculate hardness (mg/L as CaCO3).
+<br><input type="text" name="q7">
+</div>
+
+<div class="question">
+8. Calculate Atom Economy for:
+C2H4 + HCl → C2H5Cl
+<br><input type="text" name="q8">
+</div>
+
+<br>
+<button type="button" onclick="submitExam()">Submit Exam</button>
 
 </form>
 
 <script>
-    // Timer
-    var totalTime = 90 * 60; // 90 minutes
-    var timerElement = document.getElementById("timer");
+var totalTime = 90 * 60;
+var timerElement = document.getElementById("timer");
 
-    var timer = setInterval(function() {
-        var minutes = Math.floor(totalTime / 60);
-        var seconds = totalTime % 60;
-        timerElement.innerHTML = "Time Left: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-        totalTime--;
+var timer = setInterval(function() {
+var minutes = Math.floor(totalTime / 60);
+var seconds = totalTime % 60;
+timerElement.innerHTML = "Time Left: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+totalTime--;
+if (totalTime < 0) {
+clearInterval(timer);
+alert("Time is up! Submitting exam.");
+submitExam();
+}
+}, 1000);
 
-        if (totalTime < 0) {
-            clearInterval(timer);
-            alert("Time is up! Submitting test.");
-            submitQuiz();
-        }
-    }, 1000);
+function submitExam() {
+var score = 0;
+var form = document.forms["examForm"];
 
-    function submitQuiz() {
-        var score = 0;
-        var form = document.forms["quizForm"];
+if (form["q1"].value == "a") score += 2;
+if (form["q2"].value == "b") score += 2;
+if (form["q3"].value == "a") score += 2;
 
-        // Q2 correct answer is option a
-        if (form["q2"].value == "a") {
-            score += 5;
-        }
-
-        alert("Test Submitted! Your score (objective part): " + score);
-    }
+alert("Exam Submitted!\nMCQ Score: " + score + " / 6\nShort & Numerical will be evaluated manually.");
+}
 </script>
 
 </body>

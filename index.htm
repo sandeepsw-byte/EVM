@@ -1,13 +1,13 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Environmental Science Online Examination</title>
+<title>Environmental Science Examination</title>
 <style>
 body { font-family: Arial; margin: 30px; background:#f2f4f7; }
 h1 { text-align:center; }
 .question { background:white; padding:15px; margin-bottom:15px; border-radius:8px; }
 textarea { width:100%; }
-#timer { color:red; font-weight:bold; text-align:right; }
+#timer { color:red; font-weight:bold; text-align:right; font-size:18px; }
 button { padding:10px 20px; font-size:16px; }
 </style>
 </head>
@@ -15,7 +15,7 @@ button { padding:10px 20px; font-size:16px; }
 <body>
 
 <h1>Environmental Science Examination</h1>
-<p><b>Time: 1 Hour 30 Minutes | Max Marks: 50</b></p>
+<p><b>Time: 1 Hour 30 Minutes | Maximum Marks: 50</b></p>
 
 Name: <input type="text" id="studentName" required>
 Roll No: <input type="text" id="rollNo" required>
@@ -24,57 +24,106 @@ Roll No: <input type="text" id="rollNo" required>
 
 <form id="examForm">
 
-<h2>Section A (MCQ - 2 Marks Each)</h2>
+<h2>Section A – MCQs (2 Marks Each)</h2>
 
-<div class="question">
-1. BOD measures:
-<br><input type="radio" name="q1" value="a"> Oxygen required by microorganisms
-<br><input type="radio" name="q1" value="b"> Hardness
-<br><input type="radio" name="q1" value="c"> Alkalinity
+<div class="question">1. Total Hardness is expressed as:
+<br><input type="radio" name="q1" value="a"> CaCO3
+<br><input type="radio" name="q1" value="b"> NaCl
+<br><input type="radio" name="q1" value="c"> HCl
 </div>
 
-<div class="question">
-2. Acid rain is mainly caused by:
-<br><input type="radio" name="q2" value="a"> CO2
-<br><input type="radio" name="q2" value="b"> SO2 and NOx
-<br><input type="radio" name="q2" value="c"> Methane
+<div class="question">2. BOD measures:
+<br><input type="radio" name="q2" value="a"> Oxygen required by microbes
+<br><input type="radio" name="q2" value="b"> pH
+<br><input type="radio" name="q2" value="c"> Turbidity
 </div>
 
-<div class="question">
-3. Breakpoint chlorination is used for:
+<div class="question">3. Breakpoint chlorination is used for:
 <br><input type="radio" name="q3" value="a"> Disinfection
 <br><input type="radio" name="q3" value="b"> Hardness removal
-<br><input type="radio" name="q3" value="c"> Sludge treatment
+<br><input type="radio" name="q3" value="c"> Sludge digestion
 </div>
 
-<h2>Section B (Short Answers)</h2>
+<div class="question">4. Acid rain is caused by:
+<br><input type="radio" name="q4" value="a"> CO2
+<br><input type="radio" name="q4" value="b"> SO2 & NOx
+<br><input type="radio" name="q4" value="c"> Methane
+</div>
+
+<div class="question">5. Photochemical smog contains:
+<br><input type="radio" name="q5" value="a"> Ozone
+<br><input type="radio" name="q5" value="b"> Nitrogen gas
+<br><input type="radio" name="q5" value="c"> Hydrogen
+</div>
+
+<div class="question">6. Greenhouse gas mainly responsible for warming:
+<br><input type="radio" name="q6" value="a"> CO2
+<br><input type="radio" name="q6" value="b"> Oxygen
+<br><input type="radio" name="q6" value="c"> Nitrogen
+</div>
+
+<div class="question">7. Sanitary landfill is used for:
+<br><input type="radio" name="q7" value="a"> Solid waste disposal
+<br><input type="radio" name="q7" value="b"> Water treatment
+<br><input type="radio" name="q7" value="c"> Air purification
+</div>
+
+<div class="question">8. Atom economy measures:
+<br><input type="radio" name="q8" value="a"> Reaction efficiency
+<br><input type="radio" name="q8" value="b"> Reaction speed
+<br><input type="radio" name="q8" value="c"> Reaction temperature
+</div>
+
+<div class="question">9. DO stands for:
+<br><input type="radio" name="q9" value="a"> Dissolved Oxygen
+<br><input type="radio" name="q9" value="b"> Direct Oxidation
+<br><input type="radio" name="q9" value="c"> Density Oxygen
+</div>
+
+<div class="question">10. Rainwater harvesting helps in:
+<br><input type="radio" name="q10" value="a"> Groundwater recharge
+<br><input type="radio" name="q10" value="b"> Air purification
+<br><input type="radio" name="q10" value="c"> Noise reduction
+</div>
+
+<h2>Section B – Short Answer (4 Marks Each)</h2>
 
 <div class="question">
-4. Explain EDTA method for determination of hardness.
+11. Explain EDTA method for determination of hardness.
 <textarea rows="4"></textarea>
 </div>
 
 <div class="question">
-5. Explain Primary, Secondary and Tertiary wastewater treatment.
+12. Explain determination of alkalinity.
 <textarea rows="4"></textarea>
 </div>
 
 <div class="question">
-6. Discuss greenhouse effect and global warming.
+13. Explain Primary, Secondary & Tertiary wastewater treatment.
 <textarea rows="4"></textarea>
 </div>
 
-<h2>Section C (Numericals)</h2>
-
 <div class="question">
-7. 50 mL sample required 12 mL of 0.01M EDTA. Calculate hardness (mg/L as CaCO3).
-<br><input type="text" name="q7">
+14. Discuss sources and control of NOx & SO2.
+<textarea rows="4"></textarea>
 </div>
 
 <div class="question">
-8. Calculate Atom Economy for:
+15. Explain Carbon Credits & Carbon Sequestration.
+<textarea rows="4"></textarea>
+</div>
+
+<h2>Section C – Numericals (5 Marks Each)</h2>
+
+<div class="question">
+16. 50 mL water sample required 12 mL of 0.01M EDTA. Calculate hardness (mg/L as CaCO3).
+<br><input type="text" name="q16">
+</div>
+
+<div class="question">
+17. Calculate Atom Economy for:
 C2H4 + HCl → C2H5Cl
-<br><input type="text" name="q8">
+<br><input type="text" name="q17">
 </div>
 
 <br>
@@ -103,10 +152,17 @@ var score = 0;
 var form = document.forms["examForm"];
 
 if (form["q1"].value == "a") score += 2;
-if (form["q2"].value == "b") score += 2;
+if (form["q2"].value == "a") score += 2;
 if (form["q3"].value == "a") score += 2;
+if (form["q4"].value == "b") score += 2;
+if (form["q5"].value == "a") score += 2;
+if (form["q6"].value == "a") score += 2;
+if (form["q7"].value == "a") score += 2;
+if (form["q8"].value == "a") score += 2;
+if (form["q9"].value == "a") score += 2;
+if (form["q10"].value == "a") score += 2;
 
-alert("Exam Submitted!\nMCQ Score: " + score + " / 6\nShort & Numerical will be evaluated manually.");
+alert("Exam Submitted!\nMCQ Score: " + score + " / 20\nRemaining will be evaluated manually.");
 }
 </script>
 
